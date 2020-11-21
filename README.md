@@ -53,4 +53,4 @@ There are still a few things missing in this app that I would like to add. I'll 
 3. Better error handling
 4. Logging
 
-If you have any ideas, feel fre to open an issue.
+If you have any ideas, feel free to open an issue.
