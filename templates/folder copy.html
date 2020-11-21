@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="container"></p>
+    <h2>{{ bucket }}/{{ folder }}</h2>
+    {% if files_and_folders %}
+        <ul>
+            {% for key, value in files_and_folders.items() %}
+                {% for object in value %}
+                    <li>
+                        {% if key == 'folders' %}
+                            <i class="fa fa-folder"></i>&nbsp;<a href="{{ object }}">{{ object }}</a>
+                        {% else %}
+                            <i class="fa fa-file"></i>&nbsp;<a href="{{ object }}">{{ object }}</a>&nbsp;<button data-file-name={{ object }} class="download-button">Download {{ object }}</button>
+                        {% endif %}
+                        
+                    </li>
+                {% endfor %} 
+            {% endfor %} 
+        </ul>
+    {% else %}
+        <p>The folder {{ bucket }}/{{ folder }} doesn't exist.</p>
+    {% endif %}
+  </div>
+{% endblock %}

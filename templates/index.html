@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="container"></p>
+
+    <h2>Bucket List</h2>
+    <div id="bucket-list"></div>
+    <div id="pagination-container"></div>
+
+</div>
+<script>renderBucketList({{ buckets|safe }});</script>
+{% endblock %}

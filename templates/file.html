@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="container"></p>
+    <h2>{{ file }}</h2>
+    <h3>Info for {{ file }} in {{ bucket }} bucket</h3>
+    <table class="file-info">
+      <tr>
+        <td>
+          Bucket:
+        </td>
+        <td>
+          {{ bucket }}
+        </td>
+      </tr>
+      {% for item_info in ['ContentType', 'LastModified', 'Metadata', 'Body'] %}
+        <tr>
+          <td>
+            {{ item_info }}:
+          </td>
+          <td>
+            {% if item_info == 'Body' %}
+              {% if info['ContentType'] in text_based_types or info['ContentType'] in applocation_text_based_types %} 
+                {{ info[item_info].read().decode("utf-8") }}
+              {% elif 'image' in info['ContentType'] %}
+                <img src="data:;base64,{{ b64encode(info[item_info].read()).decode('utf-8') }}"/>
+              {% else %}
+                Content type is {{ info['ContentType'] }} and is not supported for display.
+              {% endif %}
+            {% else %}
+              {{ info[item_info] }}
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock %}

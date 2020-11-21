@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="container"></p>
+    <h2>{{ bucket }}/{{ folder }}</h2>
+    <div id="folder-list"></div>
+    <div id="pagination-container"></div>
+    {% if files_and_folders %}
+        <script>renderFolderItemList("{{ bucket }}", "{{ folder }}", {{ files_and_folders|safe }});</script>
+    {% else %}
+        <p>The folder <strong>{{ bucket }}/{{ folder }}</strong> doesn't exist or is empty.</p>
+    {% endif %}
+  </div>
+{% endblock %}

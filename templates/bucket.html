@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="container"></p>
+    <h2>Object List for {{ bucket }} </h2>
+    <div id="bucket-list"></div>
+    <div id="pagination-container"></div>
+    {% if files_and_folders %}
+        <script>renderBucketItemList("{{ bucket }}", {{ files_and_folders|safe }});</script>
+    {% else %}
+        <p>The bucket <strong>{{ bucket }}</strong> doesn't exist or is empty.</p>
+    {% endif %}
+
+    
+  </div>
+{% endblock %}
