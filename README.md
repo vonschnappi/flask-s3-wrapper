@@ -50,5 +50,7 @@ DON'T DEPLOY THE APP LIKE THAT TO YOU PRODUCTION ENVIRONMENT! Read Flask's docs 
 There are still a few things missing in this app that I would like to add. I'll do my best to add them soon:
 1. Search
 2. Breadcrumbs
+3. Better error handling
+4. Logging
 
 If you have any ideas, feel fre to open an issue.
