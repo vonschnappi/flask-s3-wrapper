@@ -19,6 +19,7 @@ These are the technologies and packages used in this app:
 * HTML + CSS + JS
 * Jquery
 * [Pagination.js](https://pagination.js.org/) - for paginating large lists of objects, files and folders.
+* [Font Awesome](https://fontawesome.com/)
 
 ## AWS Credentials for Boto3
 This app was developed with admin creds so it had all the necessary permissions to list, view and download files and folders from various buckets. You will have to pass valid AWS credentials to this app to allow it to list buckets and view and download files and folders. The level of and granularity of permissions is up to you.
